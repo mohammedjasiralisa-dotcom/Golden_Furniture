@@ -41,7 +41,7 @@ C:\src\flutter
 2. Add it to your **Environment Variables**:
    - Open **Search → Edit the system environment variables**
    - Click **Environment Variables**
-   - Under **User Variables**, find **Path** → **Edit**
+   - Under **System Variables**, find **Path** → **Edit**
    - Click **New** → Paste `C:\src\flutter\bin`
    - Click **OK** to save
 
