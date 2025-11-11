@@ -1,8 +1,17 @@
 import 'package:flutter/material.dart';
+import 'my_business.dart';
 
-class LanguageScreen extends StatelessWidget {
+// Global language code - accessed by all screens
+String globalLanguageCode = 'en';
+
+class LanguageScreen extends StatefulWidget {
   const LanguageScreen({super.key});
 
+  @override
+  State<LanguageScreen> createState() => _LanguageScreenState();
+}
+
+class _LanguageScreenState extends State<LanguageScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -37,10 +46,12 @@ class LanguageScreen extends StatelessWidget {
                 ),
                 const SizedBox(height: 30),
 
-                // Common button style for both languages
-                _buildLanguageButton(context, "English", "English Selected ✅"),
+                // English button
+                _buildLanguageButton(context, "English", "en"),
                 const SizedBox(height: 15),
-                _buildLanguageButton(context, "தமிழ்", "தமிழ் தேர்ந்தெடுக்கப்பட்டது ✅"),
+
+                // Tamil button
+                _buildLanguageButton(context, "தமிழ்", "ta"),
               ],
             ),
           ),
@@ -49,22 +60,41 @@ class LanguageScreen extends StatelessWidget {
     );
   }
 
-  // 🔹 Helper widget for both buttons
-  Widget _buildLanguageButton(BuildContext context, String label, String message) {
+  // Helper widget for both buttons
+  Widget _buildLanguageButton(BuildContext context, String label, String languageCode) {
     return SizedBox(
       width: double.infinity,
       child: ElevatedButton(
         style: ElevatedButton.styleFrom(
-          backgroundColor: Colors.deepPurpleAccent, // Same color for both
+          backgroundColor: Colors.deepPurpleAccent,
           padding: const EdgeInsets.symmetric(vertical: 15),
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(10),
           ),
         ),
         onPressed: () {
+          // Set the global language code
+          globalLanguageCode = languageCode;
+          
+          // Show a brief confirmation
           ScaffoldMessenger.of(context).showSnackBar(
-            SnackBar(content: Text(message)),
+            SnackBar(
+              content: Text(
+                languageCode == 'en'
+                    ? 'English Selected ✅'
+                    : 'தமிழ் தேர்ந்தெடுக்கப்பட்டது ✅',
+              ),
+              duration: const Duration(milliseconds: 500),
+            ),
           );
+
+          // Navigate to My Business screen after a short delay
+          Future.delayed(const Duration(milliseconds: 500), () {
+            Navigator.pushReplacement(
+              context,
+              MaterialPageRoute(builder: (context) => const MyBusinessScreen()),
+            );
+          });
         },
         child: Text(
           label,
@@ -74,3 +104,4 @@ class LanguageScreen extends StatelessWidget {
     );
   }
 }
+

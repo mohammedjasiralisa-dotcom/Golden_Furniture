@@ -163,7 +163,7 @@ class _VerifyOtpScreenState extends State<VerifyOtpScreen> {
                       decoration: InputDecoration(
                         labelText: "Enter Name",
                         filled: true,
-                        fillColor: Colors.white.withOpacity(0.9),
+                        fillColor: Color.fromRGBO(255, 255, 255, 0.9),
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(12),
                         ),
@@ -186,7 +186,7 @@ class _VerifyOtpScreenState extends State<VerifyOtpScreen> {
                         prefixStyle: const TextStyle(color: Colors.black),
                         labelText: "Enter Mobile Number",
                         filled: true,
-                        fillColor: Colors.white.withOpacity(0.9),
+                        fillColor: Color.fromRGBO(255, 255, 255, 0.9),
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(12),
                         ),
@@ -212,7 +212,7 @@ class _VerifyOtpScreenState extends State<VerifyOtpScreen> {
                         decoration: InputDecoration(
                           labelText: "Enter OTP",
                           filled: true,
-                          fillColor: Colors.white.withOpacity(0.9),
+                          fillColor: Color.fromRGBO(255, 255, 255, 0.9),
                           border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(12),
                           ),
