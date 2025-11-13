@@ -198,7 +198,7 @@ class _VerifyOtpScreenState extends State<VerifyOtpScreen> {
                     ElevatedButton(
                       onPressed: sendOtp,
                       style: ElevatedButton.styleFrom(
-                        backgroundColor: Colors.deepPurpleAccent,
+                        backgroundColor: const Color.fromARGB(255, 233, 232, 238),
                         minimumSize: const Size(double.infinity, 50),
                       ),
                       child: const Text("Send OTP"),
@@ -223,7 +223,7 @@ class _VerifyOtpScreenState extends State<VerifyOtpScreen> {
                       ElevatedButton(
                         onPressed: verifyOtp,
                         style: ElevatedButton.styleFrom(
-                          backgroundColor: Colors.green,
+                          backgroundColor: const Color.fromARGB(255, 228, 233, 228),
                           minimumSize: const Size(double.infinity, 50),
                         ),
                         child: const Text("Verify OTP"),

@@ -3,6 +3,7 @@ import 'contacts_list.dart';
 import 'customer_details.dart';
 import 'strings.dart';
 import 'language.dart';
+import 'sidebar_menu.dart';
 
 class MyBusinessScreen extends StatefulWidget {
   const MyBusinessScreen({super.key});
@@ -43,10 +44,26 @@ class _MyBusinessScreenState extends State<MyBusinessScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: SidebarMenu(
+        customers: _customers,
+        onLogout: () {
+          // Navigate back to LanguageScreen on logout
+          globalLanguageCode = 'en'; // Reset language to English
+          Navigator.pushNamedAndRemoveUntil(
+            context,
+            '/',
+            (route) => false,
+          );
+        },
+      ),
       appBar: AppBar(
-        leading: IconButton(
-          icon: const Icon(Icons.menu),
-          onPressed: () {},
+        leading: Builder(
+          builder: (context) => IconButton(
+            icon: const Icon(Icons.menu),
+            onPressed: () {
+              Scaffold.of(context).openDrawer();
+            },
+          ),
         ),
         title: Text(Strings.get('my_business', globalLanguageCode)),
         centerTitle: true,
@@ -106,13 +123,13 @@ class _MyBusinessScreenState extends State<MyBusinessScreen> {
       floatingActionButton: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 16.0),
         child: SizedBox(
-          width: 180,
+          width: 270 ,
           height: 48,
           child: FloatingActionButton.extended(
             onPressed: _addCustomer,
             label: Text(Strings.get('add_customer', globalLanguageCode)),
             icon: const Icon(Icons.add),
-            backgroundColor: const Color(0xFF6A5AE0), // purple-ish
+            backgroundColor: const Color.fromARGB(255, 227, 226, 233), // purple-ish
             shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(24)),
           ),
         ),
@@ -202,11 +219,11 @@ class _MyBusinessScreenState extends State<MyBusinessScreen> {
           Strings.get('add_customers_to_see', globalLanguageCode),
           style: const TextStyle(color: Colors.black54),
         ),
-        const SizedBox(height: 16),
+        const SizedBox(height: 20),
         ElevatedButton(
           onPressed: _addCustomer,
           style: ElevatedButton.styleFrom(
-            backgroundColor: const Color(0xFF6A5AE0),
+            backgroundColor: const Color.fromARGB(255, 237, 237, 241),
             padding: const EdgeInsets.symmetric(horizontal: 18, vertical: 12),
             shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(24)),
           ),

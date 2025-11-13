@@ -38,6 +38,24 @@ class Strings {
       'add_collection_amount': 'Add Collection Amount',
       'enter_amount_label': 'Enter Amount',
       'confirm_collection': 'Confirm Collection',
+
+      // Sidebar Menu
+      'account_privacy': 'Account & Privacy',
+      'staff': 'Staff',
+      'menu_description': 'Menu description',
+      'manage_stocks': 'Manage Stocks',
+      'service_product': 'Service Product',
+      'settings': 'Settings',
+      'customer_details_pdf': 'Customer Details PDF',
+      'about_us': 'About Us',
+      'logout': 'Logout',
+      'confirm_logout': 'Confirm Logout',
+      'logout_message': 'Your Account will Temporarily\nFrom This App',
+      // PDF / export messages
+      'generating_pdf': 'Generating PDF...',
+      'pdf_saved': 'PDF saved to:',
+      'no_customers_found': 'No customers to export',
+      'error_generating_pdf': 'Error generating PDF',
     },
     'ta': {
       // MyBusinessScreen
@@ -77,6 +95,24 @@ class Strings {
       'add_collection_amount': 'சேகரிப்பு தொகை சேர்க்கவும்',
       'enter_amount_label': 'தொகை உள்ளிடவும்',
       'confirm_collection': 'சேகரிப்பை உறுதிப்படுத்தவும்',
+
+      // Sidebar Menu
+      'account_privacy': 'கணக்கு மற்றும் தனியுரிமை',
+      'staff': 'कर्मचारी',
+      'menu_description': 'மெனு விளக்கம்',
+      'manage_stocks': 'பங்குதளங்களை நிர்வகிக்கவும்',
+      'service_product': 'சேவை பொருள்',
+      'settings': 'அமைப்புகள்',
+      'customer_details_pdf': 'வாடிக்கையாளர் விவரங்கள் PDF',
+      'about_us': 'எங்களை பற்றி',
+      'logout': 'வெளியேறு',
+      'confirm_logout': 'வெளியேறலை உறுதிப்படுத்தவும்',
+      'logout_message': 'உங்கள் கணக்கு இந்த பயன்பாட்டிலிருந்து\nதற்காலிகமாக அகற்றப்படும்',
+      // PDF / export messages
+      'generating_pdf': 'PDF உருவாக்கப்படுது...',
+      'pdf_saved': 'PDF சேமிக்கப்பட்டது:',
+      'no_customers_found': 'ஏற்றுமதி செய்ய வாடிக்கையாளர்கள் இல்லை',
+      'error_generating_pdf': 'PDF உருவாக்குவதில் பிழை',
     },
   };
 

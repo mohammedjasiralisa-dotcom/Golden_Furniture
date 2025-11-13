@@ -66,7 +66,7 @@ class _LanguageScreenState extends State<LanguageScreen> {
       width: double.infinity,
       child: ElevatedButton(
         style: ElevatedButton.styleFrom(
-          backgroundColor: Colors.deepPurpleAccent,
+          backgroundColor: const Color.fromARGB(255, 238, 238, 238),
           padding: const EdgeInsets.symmetric(vertical: 15),
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(10),
@@ -98,7 +98,7 @@ class _LanguageScreenState extends State<LanguageScreen> {
         },
         child: Text(
           label,
-          style: const TextStyle(fontSize: 16, color: Colors.white),
+          style: const TextStyle(fontSize: 16, color: Color.fromARGB(255, 139, 64, 237)),
         ),
       ),
     );

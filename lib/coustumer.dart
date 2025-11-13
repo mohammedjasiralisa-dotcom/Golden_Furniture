@@ -43,7 +43,7 @@ class _CoustumerScreenState extends State<CoustumerScreen> {
 		return InputDecoration(
 			hintText: Strings.get('value', globalLanguageCode),
 			filled: true,
-			fillColor: const Color.fromRGBO(255, 255, 255, 0.9),
+			fillColor: const Color.fromARGB(192, 255, 255, 255),
 			contentPadding: const EdgeInsets.symmetric(horizontal: 14, vertical: 14),
 			border: OutlineInputBorder(
 				borderRadius: BorderRadius.circular(10),
@@ -69,7 +69,7 @@ class _CoustumerScreenState extends State<CoustumerScreen> {
 							padding: const EdgeInsets.symmetric(horizontal: 18, vertical: 12),
 							// subtle background tint
 							decoration: const BoxDecoration(
-								color: Color.fromRGBO(235, 247, 245, 1),
+								color: Color.fromRGBO(235, 247, 245, 0.86),
 							),
 							child: Form(
 								key: _formKey,
@@ -78,13 +78,43 @@ class _CoustumerScreenState extends State<CoustumerScreen> {
 									child: Column(
 										crossAxisAlignment: CrossAxisAlignment.start,
 										children: [
-											// Product Amount label + field (thin bar style)
+											// Name
+											Text(Strings.get('name', globalLanguageCode), style: const TextStyle(fontSize: 14)),
+											const SizedBox(height: 8),
+											TextFormField(
+												controller: _nameController,
+												decoration: _fieldDecoration(),
+												validator: (v) => (v == null || v.trim().isEmpty) ? Strings.get('enter_name', globalLanguageCode) : null,
+											),
+
+											const SizedBox(height: 14),
+											// Mobile Number
+											Text(Strings.get('mobile_no', globalLanguageCode), style: const TextStyle(fontSize: 14)),
+											const SizedBox(height: 8),
+											TextFormField(
+												controller: _phoneController,
+												keyboardType: TextInputType.phone,
+												decoration: _fieldDecoration(),
+												validator: (v) => (v == null || v.trim().isEmpty) ? Strings.get('enter_mobile_number', globalLanguageCode) : null,
+											),
+
+											const SizedBox(height: 14),
+											// Product
+											Text(Strings.get('product', globalLanguageCode), style: const TextStyle(fontSize: 14)),
+											const SizedBox(height: 8),
+											TextFormField(
+												controller: _productController,
+												decoration: _fieldDecoration(),
+											),
+
+											const SizedBox(height: 14),
+											// Price (Product Amount)
 											Text(Strings.get('product_amount', globalLanguageCode), style: const TextStyle(fontSize: 14)),
 											const SizedBox(height: 8),
 											Container(
 												height: 40,
 												decoration: BoxDecoration(
-													color: const Color.fromRGBO(240, 240, 240, 0.9),
+													color: const Color.fromARGB(189, 240, 240, 240),
 													borderRadius: BorderRadius.circular(8),
 												),
 												child: TextFormField(
@@ -99,35 +129,8 @@ class _CoustumerScreenState extends State<CoustumerScreen> {
 												),
 											),
 
-											const SizedBox(height: 18),
-
-											Text(Strings.get('name', globalLanguageCode), style: const TextStyle(fontSize: 14)),
-											const SizedBox(height: 8),
-											TextFormField(
-												controller: _nameController,
-												decoration: _fieldDecoration(),
-												validator: (v) => (v == null || v.trim().isEmpty) ? Strings.get('enter_name', globalLanguageCode) : null,
-											),
-
 											const SizedBox(height: 14),
-											Text(Strings.get('mobile_no', globalLanguageCode), style: const TextStyle(fontSize: 14)),
-											const SizedBox(height: 8),
-											TextFormField(
-												controller: _phoneController,
-												keyboardType: TextInputType.phone,
-												decoration: _fieldDecoration(),
-												validator: (v) => (v == null || v.trim().isEmpty) ? Strings.get('enter_mobile_number', globalLanguageCode) : null,
-											),
-
-											const SizedBox(height: 14),
-											Text(Strings.get('product', globalLanguageCode), style: const TextStyle(fontSize: 14)),
-											const SizedBox(height: 8),
-											TextFormField(
-												controller: _productController,
-												decoration: _fieldDecoration(),
-											),
-
-											const SizedBox(height: 14),
+											// Address
 											Text(Strings.get('address', globalLanguageCode), style: const TextStyle(fontSize: 14)),
 											const SizedBox(height: 8),
 											TextFormField(
@@ -151,7 +154,7 @@ class _CoustumerScreenState extends State<CoustumerScreen> {
 							child: ElevatedButton(
 								onPressed: _submit,
 								style: ElevatedButton.styleFrom(
-									backgroundColor: Colors.black87,
+									backgroundColor: const Color.fromARGB(255, 229, 229, 231),
 									shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
 									elevation: 4,
 								),
